@@ -20,25 +20,30 @@
       <div class="weatherApp-wrapper">
         <!--Open App-Box -->
         <div class="weatherApp">
-          <h1>Lugano</h1>
-          <ul>
-            <li>Monday 12:00</li>
-            <li>Sunny</li>
-          </ul>
+          <div class="overview">
+            <h1>Lugano</h1>
+            <ul>
+              <li>Monday 12:00</li>
+              <li>Sunny</li>
+            </ul>
+          </div>
           <div class="row">
-            <div class="col-6 clearfix">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                alt="emoji of current weather"
-              />
-              5° C|F
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="emoji of current weather"
+                  class="float-left"
+                />
+                <strong>5</strong
+                ><span class="metrics">°C | <a href="#">°F </a></span>
+              </div>
             </div>
-
             <div class="col-6 clearfix">
               <ul>
-                <li>Precipitation</li>
-                <li>Wind Speed</li>
-                <li>Humidity</li>
+                <li>Description:</li>
+                <li>Windspeed: 20km/h</li>
+                <li>Humidity: 20%</li>
               </ul>
             </div>
           </div>
