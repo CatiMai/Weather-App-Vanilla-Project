@@ -1,6 +1,5 @@
 function formatTime(timestamp) {
   let date = new Date(timestamp);
-
   let thisDate = date.getDate();
   let year = date.getFullYear();
   let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
@@ -55,6 +54,12 @@ function displayTemperature(response) {
 
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatTime(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
 let Key = "3aacdf70afc33650631ca99d10ae4afe";
