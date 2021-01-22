@@ -33,6 +33,8 @@ li {
   font-weight: 100;
   line-height: 19px;
   color: rgb(135, 135, 135);
+}
+li:first-letter {
   text-transform: capitalize;
 }
 .overview {
