@@ -9,6 +9,18 @@
   border-radius: 10px;
 }
 
+.searchbutton {
+  display: block;
+  margin: 0;
+  padding: 3px 8px 3px 8px;
+  position: relative;
+  right: 13px;
+  top: 2px;
+  background: rgb(253, 241, 235);
+  border-radius: 3px;
+  border: 1px solid rgb(201, 201, 201);
+}
+
 h1 {
   color: rgb(135, 135, 135);
   text-align: left;

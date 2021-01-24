@@ -37,8 +37,21 @@
       <div class="weatherApp-wrapper">
         <!--Open App-Box -->
         <div class="weatherApp">
-          <div class="overview">
-            <h1 id="current-city"></h1>
+<form id="search-form">
+  <p class="card-text">
+   <div class="row" >
+    <div class="col-10"> 
+      <input type="text" class="form-control backgroundCardtwo" placeholder="Type city name" autofocus="on" id="text-input">
+   </div>
+  <div class="col-2 " >
+      <input class="searchbutton" type="submit" value="Search" label="searchbutton">
+  </div>
+   </div>
+  </p>
+</form>
+
+  <div class="overview">
+            <h1 id="searched-city"></h1>
             <ul>
               <li>Last updated: <br /><span id="date"></span></li>
               <li id="description"></li>

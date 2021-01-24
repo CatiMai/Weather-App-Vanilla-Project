@@ -37,7 +37,7 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
 
-  let cityElement = document.querySelector("#current-city");
+  let cityElement = document.querySelector("#searched-city");
   cityElement.innerHTML = response.data.name;
 
   let descriptionElement = document.querySelector("#description");
@@ -54,6 +54,7 @@ function displayTemperature(response) {
 
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatTime(response.data.dt * 1000);
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -62,10 +63,37 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
-let Key = "3aacdf70afc33650631ca99d10ae4afe";
-let units = "metric";
-let city = "London";
+//let Key = "3aacdf70afc33650631ca99d10ae4afe";
+//let units = "metric";
+//let city = "London";
 
-let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Key}&units=metric`;
-console.log(apiURL);
-axios.get(apiURL).then(displayTemperature);
+//let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Key}&units=metric`;
+//console.log(apiURL);
+//axios.get(apiURL).then(displayTemperature);
+
+//Searching for a city
+function search(city) {
+  if (city) {
+    let searchedCity = document.querySelector("#searched-city");
+    searchedCity.innerHTML = city;
+    let apiKey = "3aacdf70afc33650631ca99d10ae4afe";
+    let units = "metric";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity.innerHTML}&units=${units}`;
+    axios.get(`${apiURL}&appid=${apiKey}`).then(displayTemperature);
+  } else {
+    searchedCity.innerHTML = null;
+    alert("Please type a city or click the current Location button");
+  }
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#text-input");
+
+  search(searchInput.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+//Default City
+search("New York");
