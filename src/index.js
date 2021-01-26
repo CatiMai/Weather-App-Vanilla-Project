@@ -156,4 +156,4 @@ let fahrenheitlink = document.querySelector("#fahrenheit-link");
 fahrenheitlink.addEventListener("click", displayFahrenheitTemp);
 
 //Default City
-search("New York");
+search("Honolulu");
