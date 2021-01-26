@@ -33,7 +33,6 @@ function formatTime(timestamp) {
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
   celsiusTemp = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#current-temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
@@ -72,7 +71,37 @@ function displayTemperature(response) {
 //console.log(apiURL);
 //axios.get(apiURL).then(displayTemperature);
 
-//Searching for a city
+//Searching for a city +displaying temperature + forecast
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
+  let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+  return `${hours}:${minutes}`;
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    let forecast = response.data.list[index];
+    forecastElement.innerHTML += `  
+  <div class="col-2">
+    <h3>${formatHours(forecast.dt * 1000)}</h3>
+      <div class="weatherForecast-Temp">
+<strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(
+      forecast.main.temp_min
+    )}°
+    </div>
+    <img src="http://openweathermap.org/img/wn/${
+      forecast.weather[0].icon
+    }@2x.png"
+    />
+  </div>`;
+  }
+}
+
 function search(city) {
   if (city) {
     let searchedCity = document.querySelector("#searched-city");
@@ -81,6 +110,10 @@ function search(city) {
     let units = "metric";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity.innerHTML}&units=${units}`;
     axios.get(`${apiURL}&appid=${apiKey}`).then(displayTemperature);
+
+    //forecast
+    apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchedCity.innerHTML}&units=${units}&appid=${apiKey}`;
+    axios.get(apiURL).then(displayForecast);
   } else {
     searchedCity.innerHTML = null;
     alert("Please type a city or click the current Location button");
