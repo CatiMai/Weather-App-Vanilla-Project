@@ -1,3 +1,6 @@
+body.background {
+  background-image: url("media/background_sky.jpg");
+}
 .weatherApp-wrapper {
   max-width: 600px;
   margin: 40px auto 0px auto;
@@ -127,7 +130,6 @@ img.forecast-icon {
   display: block;
   font-size: 10px;
   font-style: normal;
-
   margin-top: 5px;
   width: 64px;
 }
