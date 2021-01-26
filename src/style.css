@@ -82,7 +82,7 @@ li:first-letter {
   font-size: 16px;
   margin-bottom: 15px;
   margin-top: 6px;
-
+  margin-left: 5px;
   color: rgb(32, 33, 36);
   display: block;
   float: left;
@@ -90,6 +90,16 @@ li:first-letter {
   font-weight: 400;
   height: 18px;
   line-height: normal;
+  width: 50px;
+}
 
-  width: 46px;
+a.active {
+  color: rgb(32, 33, 36);
+  text-decoration: none;
+  cursor: default;
+  font-size: 20px;
+}
+
+a.active:hover {
+  text-decoration: none;
 }
