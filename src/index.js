@@ -1,3 +1,4 @@
+//display day "last updated"
 function formatTime(timestamp) {
   let date = new Date(timestamp);
   let thisDate = date.getDate();
@@ -31,7 +32,7 @@ function formatTime(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${thisDate}.${month}.${year} at ${hours}:${minutes}`;
 }
-
+//Searching for a city + displaying weather information of that city
 function displayTemperature(response) {
   celsiusTemp = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#current-temperature");
@@ -44,7 +45,7 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
 
   let windElement = document.querySelector("#current-wind-speed");
-  windElement.innerHTML = response.data.wind.speed;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 
   let humidityElement = document.querySelector("#current-humidity");
   humidityElement.innerHTML = response.data.main.humidity;
@@ -63,15 +64,7 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
-//let Key = "3aacdf70afc33650631ca99d10ae4afe";
-//let units = "metric";
-//let city = "London";
-
-//let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Key}&units=metric`;
-//console.log(apiURL);
-//axios.get(apiURL).then(displayTemperature);
-
-//Searching for a city +displaying temperature + forecast
+//display Forecast
 function formatHours(timestamp) {
   let date = new Date(timestamp);
   let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();

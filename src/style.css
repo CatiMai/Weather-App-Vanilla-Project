@@ -31,18 +31,20 @@ input.searchbutton {
   background: rgb(253, 241, 235);
   border-radius: 3px;
   border: 1px solid rgb(201, 201, 201);
-  box-shadow: 1px 1px 1px 1px rgb(28, 28, 65);
+  box-shadow: 1px 1px 1px 1px rgb(28, 28, 65, 0.4);
   font-size: 20px;
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
 }
 input #text-input {
   font-size: 25px;
+  border: 1px solid rgb(201, 201, 201);
+  box-shadow: 1px 1px 1px 1px rgb(28, 28, 65);
 }
 
 h1 {
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
   text-align: left;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 100;
   height: 30px;
   line-height: 28px;
@@ -59,10 +61,10 @@ h3 {
   text-align: center;
 }
 h3.forecast-time {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 100;
   line-height: 19px;
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
   text-align: center;
 }
 ul {
@@ -72,8 +74,8 @@ ul {
   padding: 0px;
 }
 li.weatherInfo {
-  font-size: 20px;
-  margin-bottom: 4px;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 span#felt-temp {
   font-weight: bold;
@@ -87,10 +89,10 @@ span#current-humidity {
 li {
   margin: 0 0 5px 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 100;
   line-height: 19px;
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
 }
 li:first-letter {
   text-transform: capitalize;
@@ -99,7 +101,7 @@ li#description {
   position: relative;
   margin-top: 15px;
   margin-bottom: 0px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
 .overview {
@@ -108,7 +110,7 @@ li#description {
 }
 .weather-temperature img {
   margin-right: 15px;
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
   display: block;
   float: left;
   font-size: 16px;
@@ -120,7 +122,7 @@ li#description {
   width: 64px;
 }
 .weather-temperature strong {
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
   float: left;
   display: block;
   font-size: 64px;
@@ -137,7 +139,7 @@ li#description {
   margin-bottom: 15px;
   margin-top: 6px;
   margin-left: 5px;
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
   display: block;
   float: left;
   font-style: normal;
@@ -148,7 +150,7 @@ li#description {
 }
 
 a.active {
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
   text-decoration: none;
   cursor: default;
   font-size: 20px;
@@ -158,9 +160,9 @@ a.active:hover {
   text-decoration: none;
 }
 .forecastHeadline {
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
   text-align: left;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 100;
   height: 30px;
   line-height: 28px;
@@ -173,7 +175,7 @@ hr {
   margin-top: 5px;
 }
 img.forecast-img {
-  color: rgb(135, 135, 135);
+  color: rgb(43, 43, 43);
   float: left;
   display: block;
   font-size: 64px;
@@ -186,8 +188,8 @@ img.forecast-img {
 }
 .weatherForecast-Temp {
   text-align: center;
-  color: rgb(135, 135, 135);
-  font-size: 16px;
+  color: rgb(43, 43, 43);
+  font-size: 20px;
   font-weight: 100;
   line-height: 19px;
   margin-bottom: 5px;
