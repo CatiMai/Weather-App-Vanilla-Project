@@ -5,6 +5,7 @@ body {
 }
 .container {
   display: block;
+  max-width: width 100%;
 }
 
 .weatherApp-wrapper {
