@@ -88,15 +88,15 @@ function displayForecast(response) {
     let forecast = response.data.list[index];
     forecastElement.innerHTML += `  
   <div class="col-2">
-    <h3>${formatHours(forecast.dt * 1000)}</h3>
+    <h3 class="forecast-time">${formatHours(forecast.dt * 1000)}</h3>
       <div class="weatherForecast-Temp">
 <strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(
       forecast.main.temp_min
     )}°
     </div>
-    <img src="http://openweathermap.org/img/wn/${
+    <img class="forecast-img"src="http://openweathermap.org/img/wn/${
       forecast.weather[0].icon
-    }@2x.png"
+    }@2x.png" width=64px
     />
   </div>`;
   }
